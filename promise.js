@@ -1,6 +1,6 @@
 function Wakeup(){
     return new Promise((resolve,reject) =>{
-        setInterval(() =>{
+        setTimeout(() =>{
             let wake = true
             if(wake){
                 resolve("Woke up")
@@ -15,7 +15,7 @@ function Wakeup(){
 
 function TakeBath(){
     return new Promise((resolve,reject) =>{
-        setInterval(() => {
+        setTimeout(() => {
             let bath = true
             if(bath){
                 resolve("Took Bath")
@@ -30,7 +30,7 @@ function TakeBath(){
 
 function Breakfast(){
     return new Promise((resolve,reject) => {
-        setInterval(() => {
+        setTimeout(() => {
             let food = false
             if(food){
                 resolve("BreakFast")
@@ -62,10 +62,10 @@ async function MorningRoutine() {
     try{
         let wake =await Wakeup()
         console.log(wake);
-
+        
         let bath =await TakeBath()
         console.log(bath);
-    
+
         try{
             let food =await Breakfast()
             console.log(food);
@@ -84,4 +84,9 @@ async function MorningRoutine() {
 }
 
 MorningRoutine().finally(()=>console.log("routine completed"))
-console.log("hi");
+
+
+
+
+
+
