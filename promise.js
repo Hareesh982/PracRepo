@@ -1,48 +1,60 @@
 function Wakeup(){
     return new Promise((resolve,reject) =>{
-        let wake = true
-        if(wake){
-            resolve("Woke up")
-        }
-        else{
-            reject("still asleep")
-        }
+        setInterval(() =>{
+            let wake = true
+            if(wake){
+                resolve("Woke up")
+            }
+            else{
+                reject("still asleep")
+            }
+        },2000)
+        
     })
 }
 
 function TakeBath(){
     return new Promise((resolve,reject) =>{
-        let bath = true
-        if(bath){
-            resolve("Took Bath")
-        }
-        else{
-            reject("Didnt bath")
-        }
+        setInterval(() => {
+            let bath = true
+            if(bath){
+                resolve("Took Bath")
+            }
+            else{
+                reject("Didnt bath")
+            }
+        }, 2000);
+        
     })
 }
 
 function Breakfast(){
     return new Promise((resolve,reject) => {
-        let food = true
-        if(food){
-            resolve("BreakFast")
-        }
-        else{
-            reject("Not hungry")
-        }
+        setInterval(() => {
+            let food = false
+            if(food){
+                resolve("BreakFast")
+            }
+            else{
+                reject("Not hungry")
+            }
+        }, 2000);
+        
     })
 }
 
 function GoToWork(){
     return new Promise((resolve,reject) => {
-        let work = false
-        if(work){
-            resolve("Went for work")
-        }
-        else{
-            reject("Took a leave")
-        }
+        setTimeout(() => {
+            let work = true
+            if(work){
+                resolve("Went for work")
+            }
+            else{
+                reject("Took a leave")
+            }
+        }, 2000);
+        
     })
 }
 
@@ -72,7 +84,4 @@ async function MorningRoutine() {
 }
 
 MorningRoutine().finally(()=>console.log("routine completed"))
-
-
-
-
+console.log("hi");
